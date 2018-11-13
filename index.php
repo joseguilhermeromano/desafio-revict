@@ -1,17 +1,15 @@
-<?php  
+<?php
 
-require_once ('/models/cliente.php');
-require_once ('/database/cliente_dao.php');
-require_once ('/database/database.php');
+if (isset($_GET['controller'])&&isset($_GET['action'])){
+    $controller=$_GET['controller'];
+    $action=$_GET['action'];
+}else{
+    $controller='main';
+    $action='home';
+}
 
-$db      = new Database();
-$dao     = new ClienteDAO($db);
 
-$cliente = new Cliente();
-$cliente->setNome("José Guilherme");
-$cliente->setSobrenome("Romano");
-$cliente->setCpf("000.000.000-00");
+include_once 'views/layout/layout.php';
 
-$dao->create($cliente); // aqui grava o resultado enviado do form
 
-echo "testando cadastro de clientes...";
+?>
