@@ -31,15 +31,15 @@ class Cliente {
   }
 
   public function setNome($nome){
-      $this->nome = $nome;
+    $this->nome = $nome;
   }
 
   public function setSobrenome($sobrenome){
-      $this->sobrenome = $sobrenome;
+    $this->sobrenome = $sobrenome;
   }
 
   public function setCpf($cpf){
-      $this->cpf = $cpf;
+    $this->cpf = $cpf;
   }
 
 }

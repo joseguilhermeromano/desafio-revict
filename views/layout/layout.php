@@ -2,11 +2,11 @@
     <head>
         <meta charset="utf-8">
          <!-- Bootstrap -->
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?= BASE_URL ?>bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?= BASE_URL ?>bootstrap/js/bootstrap.min.js"></script>
     </head>
     
     <body>
@@ -33,7 +33,9 @@
         <div id="main" class="container-fluid" style="margin-top: 20px">
             <div id="top" class="row">
 		<div class="col-sm-12">
-                    <?php include_once 'Util/router.php'; ?>
+                <?php
+                echo $content_for_layout;
+                ?>
                 </div>
             </div>
         </div>
