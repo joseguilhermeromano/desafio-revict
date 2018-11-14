@@ -5,6 +5,8 @@ class Cliente {
   private $nome;
   private $sobrenome;
   private $cpf;
+  private $created_at;
+  private $updated_at;
 
   //Getters
 
@@ -13,15 +15,23 @@ class Cliente {
   }
 
   public function getNome(){
-      return $this->nome;
+    return $this->nome;
   }
 
   public function getSobrenome(){
-      return $this->sobrenome;
+    return $this->sobrenome;
   }
 
   public function getCpf(){
-      return $this->cpf;
+    return $this->cpf;
+  }
+
+  public function getCreated_at(){
+    return $this->created_at;
+  }
+
+  public function getUpdated_at(){
+    return $this->updated_at;
   }
 
   //Setters
@@ -40,6 +50,14 @@ class Cliente {
 
   public function setCpf($cpf){
     $this->cpf = $cpf;
+  }
+
+  public function setCreated_at($created_at){
+    $this->created_at = $created_at;
+  }
+
+  public function setUpdated_at($updated_at){
+    $this->updated_at = $updated_at;
   }
 
 }
