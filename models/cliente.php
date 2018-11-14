@@ -26,11 +26,11 @@ class Cliente {
     return $this->cpf;
   }
 
-  public function getCreated_at(){
+  public function getCreatedAt(){
     return $this->created_at;
   }
 
-  public function getUpdated_at(){
+  public function getUpdatedSt(){
     return $this->updated_at;
   }
 
@@ -52,11 +52,11 @@ class Cliente {
     $this->cpf = $cpf;
   }
 
-  public function setCreated_at($created_at){
+  public function setCreatedAt($created_at){
     $this->created_at = $created_at;
   }
 
-  public function setUpdated_at($updated_at){
+  public function setUpdatedAt($updated_at){
     $this->updated_at = $updated_at;
   }
 
