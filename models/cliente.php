@@ -5,8 +5,13 @@ class Cliente {
   private $nome;
   private $sobrenome;
   private $cpf;
+  private $dividas;
   private $created_at;
   private $updated_at;
+
+  public function __construct(){
+    $this->dividas = new ArrayObject();
+  }
 
   //Getters
 
@@ -26,6 +31,10 @@ class Cliente {
     return $this->cpf;
   }
 
+  public function getDividas(){
+    return $this->dividas;
+  }
+
   public function getCreatedAt(){
     return $this->created_at;
   }
@@ -37,7 +46,7 @@ class Cliente {
   //Setters
 
   public function setId($id){
-    return $this->id;
+    $this->id = $id;
   }
 
   public function setNome($nome){
@@ -50,6 +59,10 @@ class Cliente {
 
   public function setCpf($cpf){
     $this->cpf = $cpf;
+  }
+
+  public function setDividas($dividas){
+    $this->dividas = $dividas;
   }
 
   public function setCreatedAt($created_at){

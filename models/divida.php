@@ -4,9 +4,11 @@ class Divida {
   private $nome;
   private $descricao;
   private $valor_total;
-  private $data_processamento;
+  private $data_vencimento;
   private $qtd_parcelas;
   private $status;
+  private $cliente;
+  private $cliente_id;
   private $created_at;
   private $updated_at;
 
@@ -28,8 +30,8 @@ class Divida {
     return $this->valor_total;
   }
 
-  public function getDataProcessamento(){
-    return $this->data_processamento;
+  public function getDataVencimento(){
+    return $this->data_vencimento;
   }
 
   public function getQtdParcelas(){
@@ -38,6 +40,14 @@ class Divida {
 
   public function getStatus(){
     return $this->status;
+  }
+
+  public function getCliente(){
+    return $this->cliente;
+  }
+
+  public function getClienteId(){
+    return $this->cliente_id;
   }
 
   public function getCreatedAt(){
@@ -66,8 +76,8 @@ class Divida {
     $this->valor_total = $valor_total;
   }
 
-  public function setDataProcessamento($data_processamento){
-    $this->data_processamento = $data_processamento;
+  public function setDataVencimento($data_vencimento){
+    $this->data_vencimento = $data_vencimento;
   }
 
   public function setQtdParcelas($parcelas){
@@ -76,6 +86,14 @@ class Divida {
 
   public function setStatus($status){
     $this->status = $status;
+  }
+
+  public function setCliente(Cliente $cliente){
+    $this->cliente = $cliente;
+  }
+
+  public function setClienteId($cliente_id){
+    $this->cliente_id = $cliente_id;
   }
 
   public function setCreatedAt($created_at){
