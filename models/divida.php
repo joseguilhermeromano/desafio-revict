@@ -5,7 +5,6 @@ class Divida {
   private $descricao;
   private $valor_total;
   private $data_vencimento;
-  private $qtd_parcelas;
   private $status;
   private $cliente;
   private $cliente_id;
@@ -32,10 +31,6 @@ class Divida {
 
   public function getDataVencimento(){
     return $this->data_vencimento;
-  }
-
-  public function getQtdParcelas(){
-    return $this->qtd_parcelas;
   }
 
   public function getStatus(){
@@ -78,10 +73,6 @@ class Divida {
 
   public function setDataVencimento($data_vencimento){
     $this->data_vencimento = $data_vencimento;
-  }
-
-  public function setQtdParcelas($parcelas){
-    $this->qtd_parcelas = $parcelas;
   }
 
   public function setStatus($status){

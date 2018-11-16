@@ -1,4 +1,6 @@
 <?php 
+require_once ('flash_messages.php');
+
 class Controller {
   var $vars = [];
   var $layout = "layout";
@@ -18,6 +20,14 @@ class Controller {
     }else{
         require(ROOT . "views/layout/" . $this->layout . '.php');
     }
+  }
+
+  function redirect($url, $permanent = false) {
+    if($permanent) {
+      header('HTTP/1.1 301 Moved Permanently');
+    }
+    header('Location: '.BASE_URL.$url);
+    exit();
   }
 }
 ?>

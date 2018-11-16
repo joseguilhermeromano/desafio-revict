@@ -7,15 +7,14 @@ class DividaDAO{
 
   public function insert(Divida $divida){
     $sql = "INSERT INTO dividas (nome, descricao, valor_total, data_vencimento, ".
-           "qtd_parcelas, status, cliente_id)VALUES (:nome, :descricao, :valor_total, ".
-           ":data_vencimento, :qtd_parcelas, :status, :cliente_id)";
+           " status, cliente_id)VALUES (:nome, :descricao, :valor_total, ".
+           ":data_vencimento, :status, :cliente_id)";
     $stmt = Database::getConexao()->prepare($sql);
     return $stmt->execute([
         'nome' => $divida->getNome(),
         'descricao' => $divida->getDescricao(),
         'valor_total' => $divida->getValorTotal(),
         'data_vencimento' => $divida->getDataVencimento(),
-        'qtd_parcelas' => $divida->getQtdParcelas(),
         'status' => $divida->getStatus(),
         'cliente_id' => $divida->getClienteId()
     ]);
@@ -69,7 +68,7 @@ class DividaDAO{
   public function edit(Divida $divida, $id){
     $sql = "UPDATE dividas SET nome = :nome, descricao = :descricao, ".
            "valor_total = :valor_total, data_vencimento = :data_vencimento, ".
-           "qtd_parcelas = :qtd_parcelas, status = :status WHERE id = :id";
+           "status = :status WHERE id = :id";
     $stmt = Database::getConexao()->prepare($sql);
     return $stmt->execute([
         'id' => $id,
@@ -77,7 +76,6 @@ class DividaDAO{
         'descricao' => $divida->getDescricao(),
         'valor_total' => $divida->getValorTotal(),
         'data_vencimento' => $divida->getDataVencimento(),
-        'qtd_parcelas' => $divida->getQtdParcelas(),
         'status' => $divida->getStatus()
     ]);
   }

@@ -47,6 +47,24 @@
             </div>
         <!--<footer style="background-color:lightblue; height:100px; width:100%; position:fixed;left:0px; bottom:0px"></footer>-->
         <br>
+
+        <script language="Javascript">
+            function confirmacao(link) {
+                var resposta = confirm("Tem certeza que deseja remover os dados desse registro?");
+            
+                if (resposta == true) {
+                    window.location.href = link;
+                }
+            }
+        </script>
+
+        <script src="<?= BASE_URL ?>assets/js/jquery.min.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/validator.min.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/validator.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/jquery.mask.min.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/jquery.mask.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/configDefaultMaskedInput.js"></script>
+        <script type="text/javascript" src="<?= BASE_URL ?>assets/js/jquery-ui.js"></script>
         <footer class="container-fluid text-center">
             <hr></hr>
                 <em>&copy; Desafio Revict 2018</em>

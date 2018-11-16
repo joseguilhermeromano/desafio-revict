@@ -30,12 +30,12 @@ class ClienteDAO{
     $stmt->setFetchMode(PDO::FETCH_CLASS, 'Cliente'); 
     $stmt->execute();
     $clientes = $stmt->fetchAll();
-    foreach($clientes as $cliente){
-      $id = $cliente->getId();
-      $dividas = $this->getAllDividasOfCliente($id);
-      $cliente->setDividas($dividas);
-    }
-    return $clientes;
+      foreach($clientes as $cliente){
+        $id = $cliente->getId();
+        $dividas = $this->getAllDividasOfCliente($id);
+        $cliente->setDividas($dividas);
+      }
+      return $clientes;
   }
 
   private function getAllDividasOfCliente($id_cliente){
@@ -43,7 +43,11 @@ class ClienteDAO{
     $stmt = Database::getConexao()->prepare($sql);
     $stmt->setFetchMode(PDO::FETCH_CLASS, 'Divida'); 
     $stmt->execute();
-    return $stmt->fetchAll();
+    $dividas = $stmt->fetchAll();
+    if(count($dividas)>0){
+      return $dividas;
+    }
+    return null;
   }
 
   public function getAllClientes(){

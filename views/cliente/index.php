@@ -22,8 +22,9 @@
           </form><br>
         </div>
       </div>
-
-
+      <br>
+      <?= flash( 'message' ); ?>
+      <br>
       <table class="table">
         <thead>
           <tr>
@@ -50,9 +51,10 @@
               <a href="<?= BASE_URL ?>cliente/edit/<?= $cliente->getId() ?>" class="btn btn-warning">
                 <span class="glyphicon glyphicon-pencil"></span>
               </a>&nbsp;
-              <a href="<?= BASE_URL ?>cliente/remove/<?= $cliente->getId() ?>" class="btn btn-danger">
+              <?php $linkexcluir = BASE_URL.'cliente/remove/'.(isset($cliente) ? $cliente->getId() : ''); ?>
+                <a class="btn btn-danger" href="javascript: func();" onclick="confirmacao('<?= $linkexcluir ?>')" >
                 <span class="glyphicon glyphicon-trash"></span>
-              </a>&nbsp;
+                </a>&nbsp;
               </td>
             </tr>
              <?php endforeach; 

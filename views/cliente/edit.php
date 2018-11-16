@@ -1,9 +1,10 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-        <br><h3 class="text-center">Cadastro de Clientes</h3><hr><br><br>
+        <br><h3 class="text-center">Editar Cliente</h3><hr><br><br>
         <?= flash( 'message' ); ?>
         <br><br>
-        <form method="POST" action="<?= BASE_URL ?>cliente/create" data-toggle="validator" id="cpf_form" role="form">
+        <form method="POST" action="<?= BASE_URL ?>cliente/update/<?= $id_cliente ?>" 
+                data-toggle="validator" id="cpf_form" role="form">
             <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" name="nome" class="form-control nome" id="nome" 
@@ -27,7 +28,7 @@
             <div class="row">
             <div class="form-group col-md-6 col-md-offset-3">
                 <a href="<?= BASE_URL ?>cliente/index" class="btn btn-primary">Voltar</a>
-                <input type="submit" class="btn btn-success" value="Cadastrar">
+                <input type="submit" class="btn btn-success" value="Editar">
                 <input type="reset" class="btn btn-default" value="Limpar">
             </div>
             </div>
