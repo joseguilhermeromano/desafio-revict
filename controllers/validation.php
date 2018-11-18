@@ -7,7 +7,7 @@ class ValidationController extends FormValidation{
         $cpf = null;
         if(isset($_GET['cpf'])){
             $cpf = $_GET['cpf'];
-        }
+		}
 		$validacao = $this->valid_cpf($cpf); 
 
 		if(!empty($cpf) && $validacao == true){
