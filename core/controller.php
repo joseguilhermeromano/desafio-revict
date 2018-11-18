@@ -1,5 +1,6 @@
 <?php 
 require_once ('flash_messages.php');
+require_once ('formvalidation.php');
 
 class Controller {
   var $vars = [];

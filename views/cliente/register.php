@@ -2,6 +2,7 @@
     <div class="col-md-6 col-md-offset-3">
         <br><h3 class="text-center">Cadastro de Clientes</h3><hr><br><br>
         <?= flash( 'message' ); ?>
+        <?= validation_errors(); ?>
         <br><br>
         <form method="POST" action="<?= BASE_URL ?>cliente/create" data-toggle="validator" id="cpf_form" role="form">
             <div class="form-group">

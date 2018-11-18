@@ -2,7 +2,6 @@
 require_once ('../core/controller.php');
 require_once ('../models/cliente.php');
 require_once ('../daos/cliente.php');
-require_once ('../core/formvalidation.php');
 
 class ClienteController extends Controller{
   private $clienteDAO;
@@ -37,10 +36,9 @@ class ClienteController extends Controller{
     $cliente->setNome($_POST['nome']);
     $cliente->setSobrenome($_POST['sobrenome']);
     $cliente->setCpf($_POST['cpf']);
-    $form = new FormValidation();
     $cpf = $cliente->getCpf();
-    if($this->clienteDAO->insert($cliente) && 
-        $form->valid_cpf($cpf)==true){
+    if($this->clienteDAO->insert($cliente) 
+       && FormValidation::valida_cliente()){
       flash('message', 'O Cliente foi cadastrado com sucesso!');
       $this->index();
     }else{
@@ -64,10 +62,9 @@ class ClienteController extends Controller{
     $cliente->setNome($_POST['nome']);
     $cliente->setSobrenome($_POST['sobrenome']);
     $cliente->setCpf($_POST['cpf']);
-    $form = new FormValidation();
     $cpf = $cliente->getCpf();
     if($this->clienteDAO->edit($cliente, $id) && 
-        $form->valid_cpf($cpf)==true){
+        FormValidation::valid_cpf($cpf)==true){
       flash('message', 'O Cliente foi atualizado com sucesso!');
       $this->index();
     }else{

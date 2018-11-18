@@ -7,8 +7,7 @@
  * @param string display class
  * @return string message
  */
-function flash( $name = '', $message = '', $class = 'alert alert-success' )
-{
+function flash( $name = '', $message = '', $class = 'alert alert-success' ){
     //We can only do something if the name isn't empty
     if( !empty( $name ) )
     {
@@ -32,6 +31,23 @@ function flash( $name = '', $message = '', $class = 'alert alert-success' )
             unset($_SESSION[$name]);
             unset($_SESSION[$name.'_class']);
         }
+    }
+}
+
+function validation_errors($errors=''){
+    if(!empty($errors) && empty($_SESSION['validation_errors'])){
+        if(!empty($_SESSION['validation_errors'])){
+            unset($_SESSION['validation_errors']);
+        }
+        $_SESSION['validation_errors'] = $errors;
+    }elseif(isset($_SESSION['validation_errors']) && empty($errors)){
+        echo '<div class="alert alert-danger" id="msg-flash">';
+        echo '<h4><b><span class="glyphicon glyphicon-exclamation-sign"></span> '.
+        'Erros de Validação:</b></h4>';
+        foreach($_SESSION['validation_errors'] as $errorMessage){
+            echo $errorMessage . '<br>';
+        }
+        echo '</div>';
     }
 }
 
