@@ -12,8 +12,8 @@
             <div class="help-block with-errors">*Campo Obrigatório!</div>
             </div>
             <div class="form-group">
-            <label for="nome">Sobrenome</label>
-            <input type="text" name="sobrenome" class="form-control nome" id="sobrenome" 
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" name="sobrenome" class="form-control sobrenome" id="sobrenome" 
             value="<?= isset($cliente) ? $cliente->getSobrenome() : '' ?>" required>
             <div class="help-block with-errors">*Campo Obrigatório!</div>
             </div>

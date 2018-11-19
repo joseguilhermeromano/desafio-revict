@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.date').mask('00/00/0000');
+  $('.masket-date').mask('00/00/0000');
   $('.time').mask('00:00:00');
   $('.date_time').mask('00/00/0000 00:00:00');
   $('.cep').mask('00000-000');
@@ -52,47 +52,6 @@ $(document).ready(function(){
   $('.selectonfocus').mask("00/00/0000", {selectOnFocus: true});
 
 });
-
-
-$('#tipoContato').change(function(){
-      $('#campoDadosContato').show();
-      $('#dadosContato').val(''); 
-      validaDadosContato();
-    });
-
-  function validaDadosContato(){
-    var opcao = $( "#tipoContato option:selected" ).val();
-
-        switch(opcao){
-          case '1':
-          $("#dadosContato").removeClass().toggleClass('form-control phone_with_ddd');
-          $("#dadosContato").attr('pattern', '^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$');
-          $("#dadosContato").attr('type','text');
-          $("#dadosContato").attr('data-pattern-error','Telefone inválido.');
-          $("#dadosContato").attr('maxlength', '15'); 
-          break;
-
-          case '2': 
-
-          $("#dadosContato").removeClass().toggleClass('form-control phone_celular');
-          $("#dadosContato").attr('pattern', '^\\([1-9]{2}\\) (?:[2-8]|9[1-9])[0-9]{3}-[0-9]{4}$');
-          $("#dadosContato").attr('type','text');
-          $("#dadosContato").attr('data-pattern-error','Celular inválido.');
-          $("#dadosContato").attr('maxlength', '15'); 
-          break;
-
-          default:
-            $("#dadosContato").attr('class', 'form-control email');
-            $("#dadosContato").removeAttr('pattern');
-            $("#dadosContato").removeAttr('data-pattern-error');
-            $("#dadosContato").attr('type','email');
-            $("#dadosContato").attr('maxlength', '250'); 
-          break;
-      }
-  }
-
-
-validaDadosContato();
 
 
     

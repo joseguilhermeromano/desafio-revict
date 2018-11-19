@@ -2,13 +2,16 @@
 require_once ('../core/controller.php');
 require_once ('../models/divida.php');
 require_once ('../daos/divida.php');
+require_once ('../daos/cliente.php');
 
 class DividaController extends Controller{
 
   private $DividaDAO;
+  private $ClienteDAO;
 
   public function __construct(){
-    $this->DividaDAO = new DividaDAO();          
+    $this->DividaDAO = new DividaDAO(); 
+    $this->ClienteDAO = new ClienteDAO();          
   }
 
   public function index(){
@@ -29,7 +32,9 @@ class DividaController extends Controller{
   }
 
   public function register(){
-
+    $data['clientes'] = $this->ClienteDAO->getAllClientes();
+    $this->set($data);
+    $this->view('register');
   }
 
   public function create(){

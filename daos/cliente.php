@@ -51,7 +51,7 @@ class ClienteDAO{
   }
 
   public function getAllClientes(){
-    $sql = "SELECT * FROM clientes";
+    $sql = "SELECT * FROM clientes order by nome, sobrenome";
     $stmt = Database::getConexao()->prepare($sql);
     $stmt->setFetchMode(PDO::FETCH_CLASS, 'Cliente'); 
     $stmt->execute();

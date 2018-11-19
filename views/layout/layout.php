@@ -8,6 +8,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
         <script src="<?= BASE_URL ?>bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+        <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/i18n/pt-BR.js"></script>
     </head>
     
     <body>
@@ -58,13 +64,15 @@
             }
         </script>
 
-        <script src="<?= BASE_URL ?>assets/js/jquery.min.js"></script>
         <script src="<?= BASE_URL ?>assets/js/validator.min.js"></script>
         <script src="<?= BASE_URL ?>assets/js/validator.js"></script>
         <script src="<?= BASE_URL ?>assets/js/jquery.mask.min.js"></script>
         <script src="<?= BASE_URL ?>assets/js/jquery.mask.js"></script>
         <script src="<?= BASE_URL ?>assets/js/configDefaultMaskedInput.js"></script>
-        <script type="text/javascript" src="<?= BASE_URL ?>assets/js/jquery-ui.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <script src="<?= BASE_URL ?>bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+        <script src="<?= BASE_URL ?>assets/js/configDatePicker.js"></script>
+        
         <footer class="container-fluid text-center">
             <hr></hr>
                 <em>&copy; Desafio Revict 2018</em>
